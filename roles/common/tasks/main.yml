@@ -1,0 +1,25 @@
+---
+
+ - name: Configure resolv.conf nameserver
+   lineinfile: dest=/etc/resolv.conf line="nameserver 8.8.8.8" state=present
+
+ - name: Configure resolv.conf search
+   lineinfile: dest=/etc/resolv.conf line="search" state=absent
+
+ - name: apt-update and upgrade
+   raw: sudo apt-get update; sudo apt-get upgrade -y
+
+ - name: python
+   apt: name=python state=present
+
+ - name: pip install
+   apt: name=python-pip state=present
+
+ - name: docker.py install
+   apt: name=docker-py state=present
+
+ - name: add docker group
+   raw: sudo usermod -aG docker $(whoami)
+
+ - name: restart docker
+   service: name=docker state=restarted

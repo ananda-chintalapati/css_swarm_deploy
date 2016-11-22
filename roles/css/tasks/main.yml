@@ -1,0 +1,28 @@
+---
+
+ - name: ELK Swarm
+   raw: docker service create --replicas {{ replication }} -p {{ elk_src_port1 }}:{{ elk_dest_port1 }} -p {{ elk_src_port2 }}:{{ elk_dest_port2 }} {{ elk_image }}
+
+ - name: Grafana
+   raw: docker service create --replicas {{ replication }} -p {{ grafana_src_port }}:{{ grafana_dest_port }} {{ grafana_image }} --mount {{ grafana_volume }}
+
+ - name: InfluxDB
+   raw: docker service create --replicas {{ replication }} -p {{ influx_src_port1 }}:{{ influx_dest_port1 }} -p {{ influx_src_port2 }}:{{ influx_dest_port2 }} {{ influx_image }} --mount {{ influx_volume }}
+
+ - name: Jenkins
+   raw: docker service create --replicas {{ replication }} -p {{ jenkins_src_port1 }}:{{ jenkins_dest_port1 }} -p {{ jenkins_src_port2 }}:{{ jenkins_dest_port2 }} {{ jenkins_image }}
+
+# - name: Kibana
+#   raw: docker service create --replicas {{ replication }} -p {{ kibana_src_port }}:{{ kibana_dest_port }} {{ kibana_image }}
+
+ - name: Netdata
+   raw: docker service create --replicas {{ replication }} -p {{ netdata_src_port }}:{{ netdata_dest_port }} {{ netdata_image }}
+
+ - name: NMap
+   raw: docker service create --replicas {{ replication }} -p {{ nmap_src_port }}-{{ nmap_dest_port }} {{ nmap_image }}
+
+ - name: Rally
+   raw: docker service create --replicas {{ replication }} {{ rally_image }}
+
+ - name: Zabbix
+   raw: docker service create --replicas {{ replication }} -p {{ zabbix_src_port1 }}:{{ zabbixdest_port1 }} -p {{ zabbix_src_port2 }}:{{ zabbixdest_port2 }} -p {{ zabbix_src_port3 }}:{{ zabbixdest_port3 }} -p {{ zabbix_src_port4 }}:{{ zabbixdest_port4 }} {{ zabbix_image }}

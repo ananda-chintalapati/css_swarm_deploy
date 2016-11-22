@@ -1,0 +1,51 @@
+---
+
+replication: 3
+
+elk_src_port1: 9200
+elk_dest_port1: 9200
+elk_src_port2: 5601
+elk_dest_port2: 5601
+elk_image: nshou/elasticsearch-kibana
+
+grafana_src_port: 3000
+grafana_dest_port: 3000
+grafana_image: grafana/grafana
+grafana_volume: /var/lib/grafana:/var/lib/grafana
+
+influx_src_port1: 8083
+influx_dest_port1: 8083
+influx_src_port2: 8086
+influx_dest_port2: 8086
+influx_image: influxdb
+influx_volume: influxdb:/var/lib/influxdb
+
+jenkins_src_port1: 8080
+jenkins_dest_port1: 8080
+jenkins_src_port2: 50000
+jenkins_dest_port2: 50000
+jenkins_image: jenkinsci/jenkins
+
+#kibana_src_port:
+#kibana_dest_port:
+#kibana_image:
+
+netdata_src_port: 19999
+netdata_dest_port: 19999
+netdata_image: titpetric/netdata
+
+nmap_src_port: 1
+nmap_dest_port: 65535
+nmap_image: uzyexe/nmap
+
+rally_image: rallyforge/rally
+
+jenkins_src_port1: 5100
+jenkins_dest_port1: 80
+jenkins_src_port2: 10051
+jenkins_dest_port2: 10051
+jenkins_src_port3: 10052
+jenkins_dest_port3: 10052
+jenkins_src_port4: 2812
+jenkins_dest_port4: 2812
+jenkins_image: berngp/docker-zabbix

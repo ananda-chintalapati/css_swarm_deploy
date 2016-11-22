@@ -1,0 +1,4 @@
+- name: Install docker
+  hosts: docker_swarm_worker
+  roles:
+   - role: css
