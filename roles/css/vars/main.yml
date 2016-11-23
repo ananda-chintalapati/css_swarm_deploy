@@ -40,12 +40,12 @@ nmap_image: uzyexe/nmap
 
 rally_image: rallyforge/rally
 
-jenkins_src_port1: 5100
-jenkins_dest_port1: 80
-jenkins_src_port2: 10051
-jenkins_dest_port2: 10051
-jenkins_src_port3: 10052
-jenkins_dest_port3: 10052
-jenkins_src_port4: 2812
-jenkins_dest_port4: 2812
-jenkins_image: berngp/docker-zabbix
+zabbix_src_port1: 5100
+zabbix_dest_port1: 80
+zabbix_src_port2: 10051
+zabbix_dest_port2: 10051
+zabbix_src_port3: 10052
+zabbix_dest_port3: 10052
+zabbix_src_port4: 2812
+zabbix_dest_port4: 2812
+zabbix_image: berngp/docker-zabbix

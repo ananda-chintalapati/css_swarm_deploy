@@ -25,4 +25,4 @@
    raw: docker service create --replicas {{ replication }} {{ rally_image }}
 
  - name: Zabbix
-   raw: docker service create --replicas {{ replication }} -p {{ zabbix_src_port1 }}:{{ zabbixdest_port1 }} -p {{ zabbix_src_port2 }}:{{ zabbixdest_port2 }} -p {{ zabbix_src_port3 }}:{{ zabbixdest_port3 }} -p {{ zabbix_src_port4 }}:{{ zabbixdest_port4 }} {{ zabbix_image }}
+   raw: docker service create --replicas {{ replication }} -p {{ zabbix_src_port1 }}:{{ zabbix_dest_port1 }} -p {{ zabbix_src_port2 }}:{{ zabbix_dest_port2 }} -p {{ zabbix_src_port3 }}:{{ zabbix_dest_port3 }} -p {{ zabbix_src_port4 }}:{{ zabbix_dest_port4 }} {{ zabbix_image }}
